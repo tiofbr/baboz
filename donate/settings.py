@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
-import django_heroku
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-28k4%vy7mhrv$ez1e22ew6#2u-h-%+33ccir!7*p(!9+ih6+!o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -44,7 +44,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -129,5 +128,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STRIPE_SECRET_KEY = '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'
 STRIPE_PUBLIC_KEY = 'pk_live_51LnuKFJAIGqcrSWMrakCJbFtL7LC8BKVelNGcifNcrC8dRE6Q0LRo1h6PYUNWRySYicJ8AoCYXlDTyIqd7p3ArDg00V2H42NRt'
-
-django_heroku.settings(locals())
